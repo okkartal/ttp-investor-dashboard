@@ -47,10 +47,10 @@ export default function DashboardClient() {
       ) : (
         <>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <MetricCard title="Total Invested" value={summary.total_invested_amount} />
-            <MetricCard title="Portfolio Value" value={summary.portfolio_value} />
-            <MetricCard title="Distributions Received" value={summary.distributions_received} />
-            <MetricCard title="Outstanding Commitments" value={summary.outstanding_commitments} />
+            <MetricCard title="Total Invested" value={summary?.total_invested_amount ?? 0} />
+            <MetricCard title="Portfolio Value" value={summary?.portfolio_value ?? 0} />
+            <MetricCard title="Distributions Received" value={summary?.distributions_received ?? 0} />
+            <MetricCard title="Outstanding Commitments" value={summary?.outstanding_commitments ?? 0} />
           </div>
           <InvestmentTable investments={investments} />
         </>
