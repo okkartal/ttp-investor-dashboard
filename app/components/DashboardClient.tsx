@@ -5,12 +5,13 @@ import { supabase } from '../lib/supabase'
 import InvestmentTable from './InvestmentTable'
 import MetricCard from './MetricCard'
 import SimulatePayoutButton from './SimulatePayoutButton'
+import { Investment, InvestorSummary } from '../types'
 
 const INVESTOR_ID = process.env.NEXT_PUBLIC_INVESTOR_ID as string
 
 export default function DashboardClient() {
-  const [summary, setSummary] = useState<any | null>(null)
-  const [investments, setInvestments] = useState<any[]>([])
+  const [summary, setSummary] = useState<InvestorSummary | null>(null)
+  const [investments, setInvestments] = useState<Investment[]>([])
   const [loading, setLoading] = useState(true)
 
   const fetchData = async () => {

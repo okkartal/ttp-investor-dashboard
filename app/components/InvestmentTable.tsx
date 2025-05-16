@@ -1,16 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-
-type Investment = {
-  id: string
-  project_name: string
-  token_class: string
-  shares_owned: number
-  market_value: number
-  roi_percent: number
-  next_distribution_date: string
-}
+import { Investment } from '../types'
 
 type Props = {
   investments: Investment[]
